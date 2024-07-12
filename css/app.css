@@ -1,0 +1,54 @@
+.preloader {
+	position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible;
+	background: rgba(255,255,255,0.4) url('flame.gif') no-repeat center center;
+}
+
+.BRAND 	{color : red;}
+.BRAND-TEXT 	{color : #e2e2e2;}
+.PERSON 	{color : yellow; }
+.PERSON-TEXT 	{color : #4b4b4b; }
+.TEE 		{color : blue;}
+.TEE-TEXT 		{color : #e2e2e2;}
+.UNWETTER  {color : green; }
+.UNWETTER-TEXT  {color : #e2e2e2; }
+.SONSTIGE  {color : black;}
+.SONSTIGE-TEXT  {color : #ffffff;}
+
+.widget_eib_widget_last ul li,
+.widget_eib_widget_lfd ul li {
+	display: block;
+}
+
+.blink_text {
+	animation:1s blinker linear infinite;
+	-webkit-animation:1s blinker linear infinite;
+	-moz-animation:1s blinker linear infinite;
+	
+	color: red;
+}
+
+@-moz-keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+@-webkit-keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+@keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@media only screen and (max-width: 840px) {
+	table.responsive {
+		margin-bottom: 0;
+		overflow: hidden;
+		overflow-x: scroll;
+		display: block;
+		white-space: nowrap;
+	}
+}
