@@ -15,8 +15,6 @@ on:
     # run only when a new release is published, but not when it's classified as a pre-release.
     types: [released]
 
-  on: workflow_dispatch
-
 # A list of jobs involved in this workflow.
 jobs:
 
