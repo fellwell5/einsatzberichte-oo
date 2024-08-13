@@ -40,6 +40,12 @@ Beispiel der übertragenen Daten: "FF Gallneukirchen"
 
 == Changelog ==
 
+= 0.2.1 =
+* Einsatzart SELBST für selbstständige Einsätze hinzugefügt
+
+= 0.2.0 =
+* Anpassungen für neues ELS des OÖLFV durchgeführt
+
 = 0.1.4 =
 * Fehler bei der Darstellung von Umlauten behoben
 

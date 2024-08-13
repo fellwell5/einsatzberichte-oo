@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Einsatzberichte OÖ
 * Description: Einsatzberichte wurde für eine einfache Verknüpfung und Datenabfrage vom LFK-Intranet erstellt. Verknüpfe deine Beiträge mit einer LFK Einsatz-ID und lasse die aktuellsten Einsätze im Widget anzeigen. Oder verwende den Shortcode [eib_jahresuebersicht] in einem Beitrag oder auf einer Seite um eine Jahresübersicht anzuzeigen.
-* Version: 0.2.0
+* Version: 0.2.1
 * Author: Matthias Schaffer
 * Author URI: https://matthiasschaffer.com/
 * License: GPL2
@@ -147,6 +147,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 					'unwetter' => 'Unwettereinsatz',
 					'person'   => 'Personenrettung',
 					'sonstige' => 'Sonstiger Einsatz',
+					'selbst'   => 'Selbstständiger Einsatz',
 				];
 				$json     = eib_api_call("get_ff_einsaetze");
 
@@ -158,6 +159,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 						'PERSON'   => 0,
 						'UNWETTER' => 0,
 						'SONSTIGE' => 0,
+						'SELBST'   => 0,
 					],
 				];
 				if ( get_option( 'eib_jahres_stats', 0 ) == 1 ) {
@@ -205,7 +207,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 				var myDoughnutChart = new Chart(eart, {
 					type: 'doughnut',
 					data: {
-						labels: ["BRAND", "TEE", "PERSON", "UNWETTER", "SONSTIGE"],
+						labels: ["BRAND", "TEE", "PERSON", "UNWETTER", "SONSTIGE", "SELBST"],
 						datasets: [{
 							label: 'Anzahl von Einsätzen',
 							data: <?php echo json_encode( array_values( $array['art'] ) ); ?>,
@@ -313,6 +315,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 							'unwetter' => 'green',
 							'person'   => 'yellow',
 							'sonstige' => 'black',
+							'selbst'   => 'black',
 						];
 						$json     = eib_api_call("get_ff_einsaetze");
 						foreach ( $json as $enum => $item ) {
@@ -566,6 +569,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 					'unwetter' => 'green',
 					'person'   => 'yellow',
 					'sonstige' => 'black',
+					'selbst'   => 'black',
 				];
 				$json     = eib_api_call("get_ff_einsaetze");
 				$num      = 0;
@@ -725,6 +729,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 					'unwetter' => 'green',
 					'person'   => 'yellow',
 					'sonstige' => 'black',
+					'selbst'   => 'black',
 				];
 				$json  = eib_api_call("get_ff_einsaetze");
 				$num   = 0;
@@ -735,6 +740,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 						'BRAND'    => 0,
 						'UNWETTER' => 0,
 						'SONSTIGE' => 0,
+						'SELBST'   => 0,
 					],
 				];
 				if ( count( $json ) == 0 ) {
@@ -938,6 +944,7 @@ add_action( 'wp_enqueue_scripts', 'eib_jahresuebersicht_ressources' );
 				'unwetter' => 'green',
 				'person'   => 'yellow',
 				'sonstige' => 'black',
+				'selbst'   => 'black',
 			];
 			$json     = eib_api_call("get_lfd");
 			$num      = 0;
