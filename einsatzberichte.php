@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Einsatzberichte OÖ
 * Description: Einsatzberichte wurde für eine einfache Verknüpfung und Datenabfrage vom LFK-Intranet erstellt. Verknüpfe deine Beiträge mit einer LFK Einsatz-ID und lasse die aktuellsten Einsätze im Widget anzeigen. Oder verwende den Shortcode [eib_jahresuebersicht] in einem Beitrag oder auf einer Seite um eine Jahresübersicht anzuzeigen.
-* Version: 0.2.1
+* Version: 0.2.2
 * Author: Matthias Schaffer
 * Author URI: https://matthiasschaffer.com/
 * License: GPL2
